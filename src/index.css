@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  color: white;
+  background-image: repeating-linear-gradient(to bottom, #032019, #00bf8f);
+
+}
