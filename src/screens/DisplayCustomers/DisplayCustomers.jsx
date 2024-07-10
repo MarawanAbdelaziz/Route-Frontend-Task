@@ -52,9 +52,12 @@ function DisplayCustomers() {
           type="text"
           placeholder="Search by name or amount"
           onChange={(e) => {
-            if (isNaN(e.target.value)) {
+            if (isNaN(e.target.value) || e.target.value == "") {
+              console.log(isNaN(e.target.value));
               setSearch(e.target.value);
-            } else {
+            }
+            if (!isNaN(e.target.value) || e.target.value == "") {
+              console.log(isNaN(e.target.value));
               setSearchNumber(e.target.value);
             }
           }}
@@ -64,12 +67,12 @@ function DisplayCustomers() {
       <div className="w-2/6 mx-auto ">
         {customers
           .filter((customer) =>
-            customer.name.toLowerCase().includes(search.toLowerCase())
-          )
-          .filter((customer) =>
             customer.totalAmount
               .toString()
               .includes(searchNumber.toString().trim())
+          )
+          .filter((customer) =>
+            customer.name.toLowerCase().includes(search.toLowerCase())
           )
           .map((customer) => (
             <div
