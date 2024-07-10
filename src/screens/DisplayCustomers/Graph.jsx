@@ -12,6 +12,7 @@ import {
   Legend,
   Tooltip,
 } from "chart.js";
+import { Helmet } from "react-helmet";
 
 ChartJS.register(
   LineElement,
@@ -104,6 +105,9 @@ function Graph() {
 
   return (
     <div className="h-screen flex justify-center items-center">
+      <Helmet>
+        <title>Graph</title>
+      </Helmet>
       <div className="w-1/2">
         <Line data={data} options={options} />
       </div>

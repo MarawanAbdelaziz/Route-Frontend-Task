@@ -53,11 +53,9 @@ function DisplayCustomers() {
           placeholder="Search by name or amount"
           onChange={(e) => {
             if (isNaN(e.target.value) || e.target.value == "") {
-              console.log(isNaN(e.target.value));
               setSearch(e.target.value);
             }
             if (!isNaN(e.target.value) || e.target.value == "") {
-              console.log(isNaN(e.target.value));
               setSearchNumber(e.target.value);
             }
           }}
