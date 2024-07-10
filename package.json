@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "concurrently \"json-server --watch db.json\" \"vite\"",
     "start-server": "node --experimental-modules server.mjs",
-    "build": "vite build",
+    "build": "vite build && json-server db.json --port $PORT",
+
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
