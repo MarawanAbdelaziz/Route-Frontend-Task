@@ -1,11 +1,13 @@
 import jsonServer from "json-server";
+import { createServer } from "http";
 
 const server = jsonServer.create();
-const router = jsonServer.router("db.json"); // path to your JSON file
+const router = jsonServer.router("/db.json");
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 server.use(router);
-server.listen(process.env.PORT || 3000, () => {
+
+createServer(server).listen(3000, () => {
   console.log("JSON Server is running");
 });
